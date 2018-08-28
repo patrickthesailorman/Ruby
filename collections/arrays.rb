@@ -36,7 +36,7 @@ arr << 8
 puts arr
 
 # This will add an element with the value 8 to the end of the array.
-# Alternatively, you can use the push and insert methods (we will learn more about methods in the coming module. For now, just remember that a method is code that performs an action).
+# Alternatively, you can use the push and insert methods
 arr.push(8)
 
 #This will add 8 to the end of the array.

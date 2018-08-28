@@ -38,4 +38,18 @@ puts "He is #{age} years old"
 a = 5
 b = 2
 puts "The sum is #{a+b}"
-# outputs "The sum is 7"
+# outputs "The sum is 7
+
+# Repeating a String
+
+=begin Strings can be repeated using the * and an integer value.
+The order of the string and the integer does matter: the string has to come first. 
+For example:
+=end
+
+a = "abc"
+puts a*3
+# outputs "abcabcabc"
+
+puts '5'*4
+# outputs 5555

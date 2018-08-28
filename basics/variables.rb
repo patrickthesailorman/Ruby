@@ -30,3 +30,12 @@ age = 42
 puts "He is #{age} years old"
 
 # outputs "He is 42 years old"
+
+
+# String Interpolation
+
+# You can embed any Ruby expression inside a double quote string using #{ }, just as you did with variable names. Ruby evaluates the placeholders and replaces them with values:
+a = 5
+b = 2
+puts "The sum is #{a+b}"
+# outputs "The sum is 7"

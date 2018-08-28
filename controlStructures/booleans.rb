@@ -28,3 +28,11 @@ a = 8
 b = 7
 
 puts a != b # true
+
+# There is also the .eql? method, which results in true only if both arguments have the same type and equal values. 
+# For example:
+puts 3 == 3.0 # true 
+# but
+puts 3.eql?(3.0) # false
+
+# 3.eql?(3.0) is false because 3 is an integer and 3.0 is a float.

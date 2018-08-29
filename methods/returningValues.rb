@@ -66,3 +66,24 @@ square(4).times {puts "Hi"}
 
 # In the code above we chained our defined square method with the times iterator. As square(4) will return 16, the loop will run and output "Hi" 16 times.
 # If anywhere along the chain there is a nil or an error, the entire chained call will break down.
+                               
+# Methods as Arguments
+
+# We can also pass methods as arguments to other methods. The returned values of those methods will be used as the actual values for the arguments, for example:
+def add(a, b)
+  a+b
+end
+
+def mult(a, b)
+  a*b
+end
+
+x = mult(add(2, 3), add(4, 7))
+puts x
+# outputs 55
+
+# We defined two methods, add and mult, and passed two calls to the add method as arguments to mult.
+# Lets break down the code:
+add(2, 3) # returns 5
+add(4, 7) # returns 11
+# so mult(add(2, 3), add(4, 7)) is the same as mult(5, 11) which returns 55.

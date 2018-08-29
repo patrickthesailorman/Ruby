@@ -22,3 +22,16 @@ puts fact(5)
 
 # The if n<=1 block acts as the base case. The base case is the exit condition of the recursion.
 # Ruby is fast! Try to run the above code for a larger number and see the output.
+
+
+# Recursive methods can become infinite, just like infinite loops. These often occur when you forget to implement the base case.
+# Below is an incorrect version of the factorial method. It has no base case:
+
+def fact(n)
+  n * fact( n - 1 )
+end
+
+puts fact(5)
+# outputs "stack level too deep (SystemStackError)"
+
+# Remember, an important key concept with recursion is to define and include the base case that makes the recursion stop.

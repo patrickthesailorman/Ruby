@@ -7,6 +7,7 @@ Ruby has four types of variable scope: local, global, instance and class.
 Local variables are local to the code construct in which they are declared. For example, a local variable declared in a method or within a loop cannot be accessed outside of that loop or method. Local variable names must begin with either an underscore or a lowercase letter. 
 For example:
 =end
+
 def calc(x)
   y = 2
   puts x*y
@@ -46,3 +47,12 @@ puts $x
 # As you can see the $x global variable is accessible in the whole program.
 # Use of global variables is strongly discouraged. The problem with global variables is that, not only are they visible anywhere in the code, but they can also be changed from anywhere in the application. This can result in hard to find bugs.
 
+=begin
+Variable Scope
+
+So why does scope exist? Why couldn't all variables be accessible everywhere so we wouldn't have to care about their scope?
+First of all, there are naming issues: if you have a big program, you'd have to give all of your variables unique names to avoid conflicts. Imagine keeping track of thousands of variable names.
+Then, there are access issues: it's very hard to track who changes what when everyone has the ability to do so. 
+Scope makes the program more predictable and secure.
+The other two types of scope in Ruby are instance and class. 
+=end

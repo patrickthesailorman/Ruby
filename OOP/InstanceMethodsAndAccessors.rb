@@ -80,3 +80,26 @@ Normally to call a method, you would use p.set_name=("Bob"), where the entire se
 However, for setter methods, Ruby allows us to use a more natural assignment syntax: p.set_name = "Bob". 
 When you see this code, just realize there's a method called set_name= working behind the scenes.
 =end
+
+# Accessors
+
+# In Ruby it is a common practice to name the getter and setter methods using the same name as the instance variable they are accessing. 
+# The previous example can be rewritten as:
+
+class Person
+  def initialize(name)
+    @name = name
+  end
+  def name
+    @name
+  end
+  def name=(name)
+    @name = name
+  end
+end
+
+p = Person.new("David")
+p.name = "Bob"
+puts p.name
+
+# outputs "Bob"

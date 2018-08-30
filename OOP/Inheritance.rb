@@ -68,3 +68,19 @@ c.speak
 # When we called the speak method for our Dog object, its superclass method was called because Dog did not override it. 
 # The Cat object called its own speak method, because it defined its own implementation.
 
+# Inheritance is a great way to remove duplication in your code by writing the shared and common functionality in the superclass and then adding individual functionality in the subclasses.
+# You can have multiple levels of inheritance, for example:
+
+class Animal
+end
+class Mammal < Animal
+end
+class Dog < Mammal
+end
+
+=begin
+Here, Dog inherits from Mammal, which inherits from Animal. 
+This can be described as an "is a" relationship because a Dog is a Mammal, which is an Animal. This is an example of single inheritance with multiple levels of hierarchy.
+However, Ruby does not support multiple inheritance, meaning you cannot inherit a class simultaneously from multiple classes. (A class cannot have multiple superclasses) 
+To achieve that behavior, Ruby supports mixins.
+=end

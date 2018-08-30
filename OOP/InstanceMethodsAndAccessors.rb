@@ -47,3 +47,36 @@ The method that is used to retrieve the value of the variable is called a getter
 The method that is used to modify the value of the variable is called a setter method.
 =end
 
+# Setter Methods
+
+=begin
+Getter methods are used to access the instance variable. If we want to change the value of the instance variables, we need setter methods.
+Ruby provides a special syntax for defining setter methods: the method name is followed by an equal sign (=).
+For example:
+=end
+
+class Person
+  def initialize(name)
+    @name = name
+  end
+  def get_name
+    @name
+  end
+  def set_name=(name)
+    @name = name
+  end
+end
+
+p = Person.new("David")
+p.set_name = "Bob"
+puts p.get_name
+
+# outputs "Bob"
+
+=begin
+In the code above, set_name is a setter method that sets the value of the @name instance variable to the value of its parameter name. 
+Notice the special syntax used when calling the method: p.set_name = "Bob". 
+Normally to call a method, you would use p.set_name=("Bob"), where the entire set_name= is the method name, and the string "Bob" is the argument being passed into the method. 
+However, for setter methods, Ruby allows us to use a more natural assignment syntax: p.set_name = "Bob". 
+When you see this code, just realize there's a method called set_name= working behind the scenes.
+=end

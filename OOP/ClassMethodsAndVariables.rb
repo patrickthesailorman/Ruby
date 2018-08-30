@@ -48,3 +48,14 @@ We also defined a class method called get_count to return the value of the class
 In the code above, we have created two objects of the Person class so the value of the @@count variable is 2.
 Class variables are usually used when you need information about the class, not the individual objects.
 =end
+
+# Class Constants
+
+# A class can also contain constants. Remember, constant variables do not change their value and start with a capital letter. It is common to have uppercase names for constants, as in:
+class Calc
+  PI = 3.14
+end
+
+# You can access constants using the class name, followed by two colon symbols (::) and the constant name, for example:
+puts Calc::PI
+# outputs 3.14

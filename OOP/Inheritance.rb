@@ -13,3 +13,26 @@ class Dog < Animal
 end
 
 # In the code above, Dog is the subclass and Animal is the superclass.
+
+
+# Now, let’s define the Animal and Dog classes:
+class Animal
+  def initialize(name, color)
+    @name = name
+    @color = color
+  end
+  def speak
+    puts "Hi"
+  end
+end
+
+class Dog < Animal
+end
+
+# Dog is a subclass of Animal so it inherits Animal's methods and attributes, making code like this possible:
+d = Dog.new("Bob", "brown")
+d.speak
+
+# outputs "Hi"
+# Now Dog has all the methods and attributes of the Animal class, which is why we can instantiate the object and call the speak method.
+

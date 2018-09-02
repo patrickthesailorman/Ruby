@@ -32,3 +32,55 @@ If we try to call the days_lived method from an object (puts p.days_lived), we w
 When the reserved word private is used in a program, anything below it in the class is private (unless public or protected is placed after it to negate it).
 Access modifiers can be applied only to methods. Instance variable are always private.
 =end
+
+#Protected
+
+=begin
+An interesting thing to note about private Ruby methods is that they cannot be called with an explicit receiver, even if that receiver is itself. When we say "receiver", we mean the object that the method is being called from. Even if we try to call the private method with self we will get an error.
+This can be needed when, for example, overloading an operator to compare two objects using a private method. 
+To demonstrate that, let's define a class Product with a private method id. If the ids of two products are equal, then they are considered equal:
+=end
+
+class Product
+  attr_accessor :name, :num
+  def initialize(name, num)
+    @name = name
+    @num = num
+  end
+  def ==(other)
+    self.id == other.id
+  end
+  private
+  def id
+    name.length*num
+  end
+end
+
+p1 = Product.new("PC", 5)
+p2 = Product.new("Laptop", 3)
+puts (p1 == p2)
+# outputs "...Error: private method 'id' called..."
+
+# This code generates an error, because we tried to call the private method id on self and the other object.
+# If we change the method from private to protected, the code will work:
+class Product
+  attr_accessor :name, :num
+  def initialize(name, num)
+    @name = name
+    @num = num
+  end
+  def ==(other)
+    self.id == other.id
+  end
+  protected
+  def id
+    name.length*num
+  end
+end
+
+p1 = Product.new("PC", 5)
+p2 = Product.new("Laptop", 3)
+puts (p1 == p2) 
+# outputs false
+
+# So, protected methods are not accessible from outside code, just like private methods, but can be called for an object of the same class or subclasses.
